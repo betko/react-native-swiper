@@ -15,7 +15,7 @@ declare module 'react-native-swiper' {
         // Set to false to disable continuous loop mode.
         autoplay?: boolean
         // Called with the new index when the user swiped
-        onIndexChanged?: any
+        onIndexChanged?: (index: number) => void;
 
         // Custom basic style & content
         // Set to true enable auto play mode.
@@ -102,5 +102,7 @@ declare module 'react-native-swiper' {
     }
 
     export default class Swiper extends Component<SwiperProps, any> {
+        // Scroll by relative index.
+        public scrollBy(index: number, animated?: boolean);
     }
 }
